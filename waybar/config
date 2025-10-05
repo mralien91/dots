@@ -1,0 +1,89 @@
+{
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 25,
+  "margin-right": 5,
+  "margin-left": 5,
+   
+  /* ===Modules left=== */ 
+  "modules-left":["hyprland/workspaces","wlr/taskbar",],
+  "modules-center":["clock"],
+  "modules-right":["tray", "battery","wireplumber","cpu","memory","custom/power"],
+
+
+
+
+
+
+  
+
+  
+  
+   // Workspaces
+  "hyprland/workspaces": {
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{}",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "all-outputs": true,
+    "active-first": true,
+    "tooltip-format": "{name}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [
+      "rofi"
+    ]
+  },
+
+   "clock": {
+    "timezone": "Asia/Tashkent",
+    "format": "{:%I:%M  | %d, %m}",
+    "tooltip-format": "{calendar}",
+    "calendar": {
+      "mode": "month"
+    }
+  },
+
+"battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "format": "{icon} {capacity}%",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+    }, 
+ "wireplumber": {
+        "format": "\udb81\udd7e {volume}%",
+        "max-volume": 100,
+        "scroll-step": 5
+    },
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true,
+    "tooltip-format": "Usage of CPU: {usage}%\nNúcleos: {cores}"
+  },
+  "memory": {
+    "format": "RAM {}%",
+    "tooltip": true,
+    "tooltip-format": "RAM usage: {used} / {total} ({percentage}%)"
+  },
+ "custom/power": {
+	"format" : "⏻ ",
+		"tooltip": false,
+		"on-click":"wlogout",
+	},
+  }
